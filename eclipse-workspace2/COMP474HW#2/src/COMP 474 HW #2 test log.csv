@@ -19,6 +19,9 @@ FR1 Boundary,Passed,Passed on the first attempt
 FR1 Boundary,Passed,Passed on the first attempt
 FR1 Boundary,Passed,Passed on the second attempt. Called the wrong methods at first
 FR1 Boundary,Passed,Passed on the first attempt
+FR2 Boundary,Passed,Passed on the first attempt
+FR2 Boundary,Passed,Passed on the first attempt
+FR2 Boundary,Passed,Passed on the first attempt
 FR5 Partition,Passed,Passed after a few attempts. Couldn't figure it out at first how to create a test that involved rounding a decimal
 FR5 Partition,Passed,Passed after a couple attempts. I originally had the wrong variable being returned 
 FR5 Boundary,Passed,Passed on the first attempt

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class COMPtests {
 
-	//intent - to make sure an integer between 1 and 4 will not cause the total to be discounted
+	//intent - to make sure an integer between 1 and 4 will not cause the total cost to be discounted
 		@Test
 		public void oneThroughFourNoDiscountTest() {
 			Tests object = new Tests();
@@ -40,9 +40,36 @@ class COMPtests {
 		@Test
 		public void NoMoreThanFiftyItemsTest() {
 			Tests object = new Tests();
-			String result = object.noMoreThanFiftyItems(51);
+			String result = object.noMoreThanFiftyItems(55);
 			assertEquals("invalid",result);
 		}
+		
+		//intent - boundary test to make sure 49 items is a valid amount
+		//for a customer to have
+		@Test
+		public void FiftyItemsBoundaryTest1() {
+			Tests object = new Tests();
+			String result = object.FiftyItems(49);
+			assertEquals("valid",result);
+		}
+		
+		//intent - boundary test to make sure 50 items is a valid amount
+		//for a customer to have
+		@Test
+		public void FiftyItemsBoundaryTest2() {
+			Tests object = new Tests();
+			String result = object.FiftyItems(50);
+			assertEquals("valid",result);
+		}
+		
+		//intent - boundary test to make sure 51 items is an invalid amount
+		//for a customer to have
+		@Test
+		public void FiftyItemsBoundaryTest3() {
+			Tests object = new Tests();
+			String result = object.noMoreThanFiftyItems(51);
+			assertEquals("invalid",result);
+				}
 		
 		//intent - to make sure if a customer is a member they get a 10% discount
 		@Test
