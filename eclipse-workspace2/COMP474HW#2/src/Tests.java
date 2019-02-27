@@ -38,6 +38,12 @@ public class Tests {
 		return (totalCost * .90);
 	}
 	
+	public static String FiftyItems(int numOfItems) {
+		if(numOfItems >= 1 && numOfItems <= 50) {
+		}
+		return "valid";
+	}
+	
 	public static String noMoreThanFiftyItems(int numOfItems) {
 		if(numOfItems > 50) {
 		}
@@ -148,8 +154,27 @@ public class Tests {
 		}
 	
 	public static double roundDecimalUp(double totalCost) {
-		totalCost = 100.235;
 		double result = Math.round(totalCost * 100.0) / 100.0;
-		return totalCost;
+		return result;
+	}
+	
+	public static double decimalDoesNotRoundUp(double totalCost) {
+		double result = Math.round(totalCost * 100.0) / 100.0;
+		return result;
+	}
+	
+	public static double decimalBoundaryTest1(double totalCost) {
+		double result = Math.round(totalCost * 100.0) / 100.0;
+		return result;
+	}
+	
+	public static double decimalBoundaryTest2(double totalCost) {
+		double result = Math.round(totalCost * 100.0) / 100.0;
+		return result;
+	}
+	
+	public static double decimalBoundaryTest3(double totalCost) {
+		double result = Math.round(totalCost * 100.0) / 100.0;
+		return result;
 	}
 }
