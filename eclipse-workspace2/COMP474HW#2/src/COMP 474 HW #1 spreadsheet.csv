@@ -1,0 +1,36 @@
+,Intention of Test,Input Price,# of items,5% discount,10% discount,Expected Outcome
+FR1,make sure no negative values can be entered,,,,,error/invalid
+FR1,make sure a value between 1 and 4 gets no discount,,,,,no discounted price
+FR1,make sure a value between 5 and 9 gets a 5% discount,,,,,price reduced by 5%
+FR1,make sure a value >= 10 gets a 10% discount,,,,,price reduced by 10%
+,,,,,,
+FR2,make sure customer cannot have more than 50 items,,51,,,error/invalid
+FR2,make sure any number of items <= 50 is a valid number,,35,,,valid
+,,,,,,
+FR3,make sure the customer is a member,$100.00 ,,,,$90.00 
+FR3,make sure the customer is not a member,$100.00 ,,,,$100.00 
+,,,,,,
+FR4,Tax-exempt == true,$100.00 ,3,No,No,$100.00 
+FR4,Tax-exempt == false,$100.00 ,3,No,No,$104.50 
+,,,,,,
+FR1 Partition,No discount for an input of 3,$100.00 ,3,No,No,$100.00 
+FR1 Partition,5% discount for an input of 7,$100.00 ,7,Yes,No,$95.00 
+FR1 Partition,10% discount for an input of 15,$100.00 ,15,No,Yes,$90.00 
+,,,,,,
+FR2 Partition,to make sure a customer can get 30 groceries,$100.00 ,30,,Yes,$90.00 
+FR2 Partition,to make sure a customer cannot get 55 groceries,,55,,,invalid
+,,,,,,
+FR1 Boundary,5% quantity discount,$100.00 ,4,No,No,$100.00 
+FR1 Boundary,5% quantity discount,$100.00 ,5,No,No,$100.00 
+FR1 Boundary,5% quantity discount,$100.00 ,6,Yes,No,$95.00 
+FR1 Boundary,10% quanity discount,$100.00 ,9,Yes,No,$95.00 
+FR1 Boundary,10% quanity discount,$100.00 ,10,No,Yes,$90.00 
+FR1 Boundary,10% quanity discount,$100.00 ,11,No,Yes,$90.00 
+,,,,,,
+FR2 Boundary,Input of 50,,,,,valid
+FR2 Boundary,input of 51,,,,,invalid
+,,,,,,
+FR5 Partition,make sure total prices are rounded to two decimal places,$100.25 ,price ending in .00 - .99,,,$100.25 
+FR5 Boundary,make sure total prices are rounded to two decimal places,$100.25 ,price ending in .00 - .99,,,$100.25 
+FR5 Boundary,Having an integer >= 5 in the thousandths place,100.145,"price should have two digits, and be rounded up",,,$100.15 
+FR5 Boundary,Having an integer  < 5 in the thousandths place,100.144,"price should have two digits, which will remain the same",,,$100.14 
